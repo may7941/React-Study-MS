@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import Customer from './components/Customer'
+import Customer from './components/Customer';
+import CustomerAdd from './components/CustomerAdd';
 import './App.css';
 import Paper from '@material-ui/core/Paper';
 import Table from '@material-ui/core/Table';
@@ -13,14 +14,14 @@ import {withStyles} from '@material-ui/core/styles';
 const styles = theme => ({
   root: {
     width: "100%",
-    marginTop: theme.spacing.unit * 3,
+    marginTop: theme.spacing(3),
     overflowX: "auto"
   },
   table: {
     minWidth: 1080
   },
   progress: {
-    margin: theme.spacing.unit * 2
+    margin: theme.spacing(2)
   }
 });
 
@@ -57,6 +58,7 @@ class App extends Component {
   render() {
     const {classes} = this.props;
     return (
+      <div>
         <Paper className={classes.root}>
           <Table className={classes.table}>
             <TableHead>
@@ -83,6 +85,8 @@ class App extends Component {
             </TableBody>
           </Table>
         </Paper>
+        <CustomerAdd/>
+      </div>  
     );
   }
 }
